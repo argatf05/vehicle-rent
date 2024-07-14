@@ -2,7 +2,7 @@ import re
 
 def validate_kode_barang(database):
     while True:
-        kode_barang = input("Masukkan Kode barang baru (format: CodeX, X adalah integer): ").strip().capitalize()
+        kode_barang = input("Masukkan Kode barang baru (format: CodeX, X adalah integer): ").strip().title()
 
         #Validasi format Code"X" dengan X adalah integer
         if re.match(r'^Code\d+$', kode_barang):
@@ -18,7 +18,7 @@ def validate_jenis_barang():
     while True:
         jenis_barang = input("Jenis Barang (mobil/sepeda motor): ").strip().lower()
         if jenis_barang in ['mobil', 'sepeda motor']:
-            return jenis_barang.capitalize()
+            return jenis_barang.title()
         else:
             print("Jenis Barang harus diisi dengan 'mobil' atau 'sepeda motor'.")
 
@@ -26,7 +26,7 @@ def validate_model_barang():
     while True:
         model_barang = input("Model Barang (hanya huruf dan angka, tanpa simbol): ").strip()
         if all(c.isalnum() or c.isspace() for c in model_barang):
-            return model_barang.capitalize()
+            return model_barang.title()
         else:
             print("Model Barang hanya boleh terdiri dari huruf, angka, dan spasi tanpa simbol.")
 
@@ -34,7 +34,7 @@ def validate_warna():
     while True:
         warna = input("Warna (hanya huruf dan spasi): ").strip()
         if all(c.isalpha() or c.isspace() for c in warna):
-            return warna.capitalize()
+            return warna.title()
         else:
             print("Warna hanya boleh terdiri dari huruf dan spasi.")
 
@@ -42,7 +42,7 @@ def validate_transmisi():
     while True:
         transmisi = input("Transmisi (automatic/manual): ").strip().lower()
         if transmisi in ['automatic', 'manual']:
-            return transmisi.capitalize()
+            return transmisi.title()
         else:
             print("Transmisi harus diisi dengan 'automatic' atau 'manual'.")
 
