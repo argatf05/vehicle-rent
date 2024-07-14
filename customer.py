@@ -23,7 +23,7 @@ def read_data(database):
 def is_vehicle_available(kode_barang):
     #Fungsi untuk cek apakah kendaraan dengan Kode barang tertentu ada untuk disewakan
     for vehicle in rented_vehicles:
-        if vehicle["Kode Barang"].capitalize() == kode_barang:
+        if vehicle["Kode Barang"].title() == kode_barang:
             return False
     return True
 
@@ -31,12 +31,12 @@ def rent_vehicle(database):
     global rented_vehicles
 
     print("\nPilih kendaraan yang ingin Anda sewa berdasarkan Kode Barang (case insensitive):")
-    kode_barang = input("Masukkan Kode Barang: ").strip().capitalize()
+    kode_barang = input("Masukkan Kode Barang: ").strip().title()
 
     vehicle = None
 
     for item in database:
-        if item["Kode barang"].capitalize() == kode_barang:
+        if item["Kode barang"].title() == kode_barang:
             vehicle = item
             break
 
@@ -183,10 +183,10 @@ def return_vehicle():
 
     #Penginputan kode barang yang ingin dikembalikan
     while True:
-        kode_barang = input("\nMasukkan Kode Barang kendaraan yang ingin Anda kembalikan (case insensitive): ").strip().capitalize()
+        kode_barang = input("\nMasukkan Kode Barang kendaraan yang ingin Anda kembalikan (case insensitive): ").strip().title()
 
         for vehicle in rented_vehicles:
-            if vehicle["Kode Barang"].capitalize() == kode_barang:
+            if vehicle["Kode Barang"].title() == kode_barang:
                 print("\nDetail Kendaraan yang Akan Dikembalikan:")
                 print(tabulate([[
                     vehicle["Nama"], 
