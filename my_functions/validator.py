@@ -1,7 +1,7 @@
 import re
 
 def validate_name(nama):
-    #Validasi nama hanya alphabet dan capitalize
+    #Validasi nama hanya alphabet
     if not nama.isalpha():
         return False
     return True
